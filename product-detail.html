@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج - مجوهرات فاخرة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Luxury Gems</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html">المجموعات</a></li>
+                <li><a href="#">جديدنا</a></li>
+                <li><a href="#">تصاميم حصرية</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" aria-label="بحث">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="حسابي">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="سلة المشتريات">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-detail">
+        <div class="product-gallery">
+            <div class="main-image">
+                <img id="mainProductImage" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800" alt="خاتم ألماس">
+            </div>
+            <div class="thumbnail-list">
+                <button class="thumbnail active" onclick="changeImage(this, 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800')">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=150" alt="صورة 1">
+                </button>
+                <button class="thumbnail" onclick="changeImage(this, 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&flip')">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=150" alt="صورة 2">
+                </button>
+                <button class="thumbnail" onclick="changeImage(this, 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800')">
+                    <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=150" alt="صورة 3">
+                </button>
+                <button class="thumbnail" onclick="changeImage(this, 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800')">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=150" alt="صورة 4">
+                </button>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <nav class="breadcrumb">
+                <a href="index.html">الرئيسية</a> / 
+                <a href="products.html">المجموعات</a> / 
+                <span>خاتم ألماس طبيعي</span>
+            </nav>
+            
+            <h1 class="product-title">خاتم ألماس طبيعي</h1>
+            <p class="product-price">15,000 ر.س</p>
+            
+            <div class="product-description">
+                <p>خاتم أنيق من الذهب الأبيض عيار 18 قيراط مع ألماس طبيعي وزرع فيروز طبيعي. تصميم كلاسيكي حديث يناسب جميع المناسبات.</p>
+            </div>
+
+            <div class="product-specs">
+                <h3>المواصفات</h3>
+                <ul>
+                    <li><strong>المعدن:</strong> ذهب أبيض 18 قيراط</li>
+                    <li><strong>الوزن:</strong> 5.2 جرام</li>
+                    <li><strong>الألماس:</strong> 1.5 قيراط</li>
+                    <li><strong>لون الحجر:</strong> F (أبيض نقي)</li>
+                    <li><strong>وضوح الحجر:</strong> VVS1</li>
+                    <li><strong>الحجر الإضافي:</strong> فيروز طبيعي</li>
+                </ul>
+            </div>
+
+            <div class="product-options">
+                <div class="option-group">
+                    <label>المقاس</label>
+                    <select>
+                        <option>اختر المقاس</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-actions">
+                <button class="btn btn-primary btn-large" onclick="addToCart()">
+                    إضافة للسلة
+                </button>
+                <button class="btn btn-secondary btn-large" onclick="addToWishlist()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="product-certificate">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                <span>يأتي مع شهادة أصالة من مختبر معتمد</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="related-products">
+        <h2 class="section-title">منتجات مشابهة</h2>
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400" alt="خاتم زفاف">
+                    <div class="product-overlay">
+                        <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <h3 class="product-name">خاتم زفاف بلاتين</h3>
+                <p class="product-price">25,000 ر.س</p>
+            </article>
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400" alt="أقراط">
+                    <div class="product-overlay">
+                        <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <h3 class="product-name">أقراط ألماس فيروز</h3>
+                <p class="product-price">18,500 ر.س</p>
+            </article>
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=400" alt="سوار">
+                    <div class="product-overlay">
+                        <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <h3 class="product-name">سوار ذهب 18 قيراط</h3>
+                <p class="product-price">12,000 ر.س</p>
+            </article>
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400" alt="قلادة">
+                    <div class="product-overlay">
+                        <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <h3 class="product-name">قلادة ذهب مع ياقوت</h3>
+                <p class="product-price">22,000 ر.س</p>
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>عن المجوهرات</h4>
+                <p>نقدم أجود المجوهرات الفاخرة منذ أكثر من 20 عاماً</p>
+            </div>
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">المجموعات</a></li>
+                    <li><a href="#">العروض الخاصة</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>تواصل معنا</h4>
+                <p>البريد: info@luxurygems.com</p>
+                <p>الهاتف: +966 12 345 6789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Luxury Gems. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function changeImage(thumbnail, src) {
+            document.getElementById('mainProductImage').src = src;
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+
+        function addToCart() {
+            alert('تمت إضافة المنتج للسلة!');
+        }
+
+        function addToWishlist() {
+            alert('تمت إضافة المنتج للمفضلة!');
+        }
+    </script>
+</body>
+</html>

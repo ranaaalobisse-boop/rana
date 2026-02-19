@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المجموعات - مجوهرات فاخرة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Luxury Gems</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html" class="active">المجموعات</a></li>
+                <li><a href="#">جديدنا</a></li>
+                <li><a href="#">تصاميم حصرية</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" aria-label="بحث">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="حسابي">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="سلة المشتريات">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="products-page">
+        <aside class="filters">
+            <h3>التصفية</h3>
+            
+            <div class="filter-group">
+                <h4>الفئة</h4>
+                <label><input type="checkbox"> خواتم</label>
+                <label><input type="checkbox"> عقود</label>
+                <label><input type="checkbox"> أقراط</label>
+                <label><input type="checkbox"> أساور</label>
+                <label><input type="checkbox"> ساعات</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>المعدن</h4>
+                <label><input type="checkbox"> ذهب أصفر</label>
+                <label><input type="checkbox"> ذهب أبيض</label>
+                <label><input type="checkbox"> فضة</label>
+                <label><input type="checkbox"> بلاتين</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>السعر</h4>
+                <label><input type="checkbox"> أقل من 5,000</label>
+                <label><input type="checkbox"> 5,000 - 10,000</label>
+                <label><input type="checkbox"> 10,000 - 20,000</label>
+                <label><input type="checkbox"> أكثر من 20,000</label>
+            </div>
+
+            <button class="btn btn-primary">تطبيق الفلاتر</button>
+        </aside>
+
+        <section class="products-section">
+            <div class="products-header">
+                <h2>جميع المجموعات</h2>
+                <select class="sort-select">
+                    <option>الترتيب الافتراضي</option>
+                    <option>السعر: من الأقل للأعلى</option>
+                    <option>السعر: من الأعلى للأقل</option>
+                    <option>الأحدث</option>
+                </select>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400" alt="خاتم ألماس">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <h3 class="product-name">خاتم ألماس طبيعي</h3>
+                    <p class="product-category">خواتم</p>
+                    <p class="product-price">15,000 ر.س</p>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400" alt="عقد لؤلؤ">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <h3 class="product-name">عقد لؤلؤ طبيعي</h3>
+                    <p class="product-category">عقود</p>
+                    <p class="product-price">8,500 ر.س</p>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=400" alt="سوار ذهب">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <h3 class="product-name">سوار ذهب 18 قيراط</h3>
+                    <p class="product-category">أساور</p>
+                    <p class="product-price">12,000 ر.س</p>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400" alt="أقراط">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <h3 class="product-name">أقراط ألماس فيروز</h3>
+                    <p class="product-category">أقراط</p>
+                    <p class="product-price">18,500 ر.س</p>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400" alt="قلادة">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <h3 class="product-name">قلادة ذهب مع ياقوت</h3>
+                    <p class="product-category">عقود</p>
+                    <p class="product-price">22,000 ر.س</p>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400" alt="خاتم زفاف">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <h3 class="product-name">خاتم زفاف بلاتين</h3>
+                    <p class="product-category">خواتم</p>
+                    <p class="product-price">25,000 ر.س</p>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400" alt="سلسلة فضة">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <h3 class="product-name">سلسلة فضة مع كرستالة</h3>
+                    <p class="product-category">عقود</p>
+                    <p class="product-price">3,500 ر.س</p>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400" alt="ساعة فاخرة">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-secondary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <h3 class="product-name">ساعة رولكس ذهبية</h3>
+                    <p class="product-category">ساعات</p>
+                    <p class="product-price">85,000 ر.س</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>عن المجوهرات</h4>
+                <p>نقدم أجود المجوهرات الفاخرة منذ أكثر من 20 عاماً</p>
+            </div>
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">المجموعات</a></li>
+                    <li><a href="#">العروض الخاصة</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>تواصل معنا</h4>
+                <p>البريد: info@luxurygems.com</p>
+                <p>الهاتف: +966 12 345 6789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Luxury Gems. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
