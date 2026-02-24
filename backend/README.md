@@ -13,7 +13,7 @@ Backend API for a Jewelry E-commerce and AI Design Platform built with FastAPI, 
 ## Technology Stack
 
 - **Framework**: FastAPI (Python)
-- **Database**: MySQL (XAMPP)
+- **Database**: SQLite (No XAMPP required!)
 - **ORM**: SQLAlchemy
 - **Authentication**: JWT (python-jose, passlib)
 - **AI Integration**: Google Gemini API
@@ -41,22 +41,9 @@ backend/
 ### 1. Prerequisites
 
 - Python 3.9+
-- XAMPP (MySQL running on port 3306)
-- MySQL database `jewelry_db` created
+- No database server required! (Uses SQLite)
 
-### 2. Create MySQL Database
-
-1. Start XAMPP and run MySQL
-2. Open phpMyAdmin (http://localhost/phpmyadmin)
-3. Create a new database named `jewelry_db`
-4. (Optional) Set charset to `utf8mb4_unicode_ci`
-
-Or use MySQL command line:
-```sql
-CREATE DATABASE jewelry_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
-
-### 3. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 cd backend
@@ -74,7 +61,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Environment Configuration
+### 3. Environment Configuration
 
 ```bash
 # Copy example environment file
@@ -82,20 +69,19 @@ cp .env.example .env
 
 # Edit .env file with your settings
 # Required variables:
-# - DATABASE_URL (already set for XAMPP default)
 # - SECRET_KEY (change for production)
-# - GEMINI_API_KEY (get from Google AI Studio)
+# - GEMINI_API_KEY (get from Google AI Studio) - Optional for AI feature
 ```
 
-**Get Gemini API Key:**
+**Get Gemini API Key (Optional):**
 1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
 2. Create a new API key
 3. Copy it to your `.env` file: `GEMINI_API_KEY=your-key-here`
 
-### 5. Initialize Database
+### 4. Initialize Database
 
 ```bash
-# Run the database seeder (creates tables + sample data)
+# Run the database seeder (creates SQLite database + sample data)
 python seeder.py
 ```
 
@@ -107,7 +93,9 @@ When prompted, type `yes` to populate the database with sample data:
 - 4 Main Categories + 12 Subcategories
 - 10 Products
 
-### 6. Start the Server
+The SQLite database file `jewelry.db` will be created automatically in the backend folder.
+
+### 5. Start the Server
 
 ```bash
 # Development mode with auto-reload
@@ -395,14 +383,13 @@ const design = await api.post('/api/ai/generate-design', designOptions);
 
 ## Troubleshooting
 
-### MySQL Connection Issues
+### Database Issues
 ```
-Error: Can't connect to MySQL server
+Error: Database locked or busy
 ```
-- Ensure XAMPP MySQL is running
-- Check database name: `jewelry_db`
-- Verify port: 3306
-- Check credentials in `.env`
+- SQLite file `jewelry.db` might be in use by another process
+- Close any other Python scripts using the database
+- If needed, delete `jewelry.db` and re-run seeder
 
 ### CORS Issues
 CORS is already configured to allow all origins. If issues persist:

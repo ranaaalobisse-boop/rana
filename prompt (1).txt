@@ -1,0 +1,74 @@
+مهم جدا جدا جدا لا تكتب التقارير بالمحادثة العادية دائما التقرير يجب ان يتم كتابته ضمن الملف UserReport.md لا تمسح التقرير في كل مطالبة جديدة بل اضف اليه تعليمات اضافية (التقرير حصرا بالعربية)
+دائما أضف التعديلات والتصحيحات وسياق المشروع بعد الانتهاء ضمن الملف Agent
+دائما عند الانتهاء قم بنشر المشروع عبر git push
+
+You are a Senior Backend Python Developer and AI Integration Expert. Your task is to build a complete backend for a Jewelry E-commerce and AI Design platform. 
+
+### 1. Technology Stack:
+- Framework: FastAPI (Python)
+- Database: MySQL (running locally on XAMPP, default port 3306, user 'root', no password).
+- ORM: SQLAlchemy with Pydantic for data validation.
+- Migrations: Alembic (optional, but prefer SQLAlchemy `create_all` for fast setup).
+- AI Integration: Google Gemini API (Target Model: `gemini-3-pro-image-preview`).
+- Frontend Compatibility: Ensure `CORSMiddleware` is enabled to accept requests from any origin (`*`) since the frontend is built with pure HTML/CSS/JS.
+
+### 2. Database Schema Implementation:
+Implement the database models based strictly on this logical flow:
+1. `Users` (id, username, password [hashed], email, first_name, last_name, phone, dob, gender, address, created_at)
+2. `Jewelers` (id, name, shop_name, bio, address, phone, email, rating, created_at)
+3. `Payment_Methods` (id, method_name, qr_code_image, is_active, notes)
+4. `Categories` (id, name, parent_id)
+5. `Products` (id, jeweler_id, name, material, karat, weight, price, stock_quantity, description, image_path)
+6. `Product_Images` (id, product_id, image_path, display_order)
+7. `Product_Categories` (M:N relationship)
+8. `Carts` (id, user_id, updated_at) & `Cart_Items` (id, cart_id, product_id, quantity)
+9. `Orders` (id, user_id, payment_method_id, order_date, status, total_amount, shipping_address, transfer_receipt)
+10. `Order_Items` (id, order_id, product_id, quantity, unit_price, subtotal)
+11. `User_Generated_Designs` (id, user_id, selected_options [JSON format], generated_image_url, created_at)
+12. `Design_Requests` (id, user_id, jeweler_id, generated_design_id [nullable], request_date, description, attachment_url, estimated_budget, jeweler_price_offer, status)
+
+*Use appropriate Enums for `order_status` and `design_request_status`.*
+
+### 3. Core Features & API Endpoints:
+Create RESTful API Routers for the following:
+- Auth: Register, Login (JWT Token), Get Current User.
+- E-commerce: 
+  - Get all products (with filters like category, material).
+  - Get single product with its multiple images.
+  - Cart Management: Add to cart, remove, view cart.
+  - Checkout: Convert Cart to Order, clear cart.
+- Admin/Jeweler Dashboards:
+  - CRUD operations for Products, Categories, and Payment Methods.
+  - View and update Order statuses.
+  - View and respond to Custom `Design_Requests` (add `jeweler_price_offer`).
+
+### 4. AI Jewelry Design Feature (Crucial):
+Create an endpoint `POST /api/ai/generate-design`.
+- It must accept a JSON payload with these exact fields: `type` (Ring, Necklace, etc.), `color`, `shape`, `material` (Silver, Gold), `karat` (18k, 21k, etc.), `gemstone_type` (Diamond, Ruby, None), `gemstone_color`.
+- Logic:
+  1. Construct a highly detailed text prompt from these inputs suitable for an AI image generator.
+  2. Call the Google Gemini API (model: `gemini-3-pro-image-preview`) using the official SDK.
+  3. Receive the generated image (handle base64 or URL).
+  4. Save the image locally in a `/static/generated_designs/` folder.
+  5. Save the record in the `User_Generated_Designs` table (store the inputs as JSON in `selected_options` and the local image path in `generated_image_url`).
+  6. Return the image URL and the design ID to the frontend.
+
+### 5. Database Seeders:
+Create a file named `seeder.py`. When executed, it should clear existing data and populate the MySQL database with:
+- 3 Admin/Jewelers.
+- 5 Users.
+- 3 Categories (e.g., Rings, Necklaces) with some sub-categories.
+- 2 Payment Methods (e.g., Bank Transfer with a dummy QR code path).
+- 10 realistic Jewelry Products (linked to jewelers and categories).
+
+### 6. Deliverables & Output Requirements:
+1. Provide a well-structured project repository (e.g., `main.py`, `database.py`, `models/`, `routers/`, `schemas/`, `seeder.py`).
+2. Include a `.env.example` file (with `DATABASE_URL=mysql+pymysql://root:@localhost:3306/jewelry_db` and `GEMINI_API_KEY`).
+3. **Generate a Detailed Markdown Report (`README.md`)** that includes:
+   - Instructions on how to set up the XAMPP MySQL database.
+   - How to install dependencies (`requirements.txt`).
+   - How to run the `seeder.py`.
+   - How to start the FastAPI Uvicorn server.
+   - A guide for the Frontend Developer on how to connect their HTML/JS code to the Backend APIs using `fetch` or `axios`, specifically demonstrating the AI Design endpoint and authentication headers.
+
+Begin coding now and output the complete files structure and code.
